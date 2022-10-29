@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>select any topic i can display webpages of it</h1>
+    <center>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="topic">Topic_name</label>
+            <select name="topic" id="topic" multiple>
+                {% for topic in topics %}
+                <option value="{{topic}}">{{topic.topic_name}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="retrive">
+        </form>
+    </center>
+</body>
+</html>
